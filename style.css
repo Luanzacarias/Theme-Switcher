@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+.dark {
+    background-color: #292C35;
+}
+.light {
+    background-color: #F1F1F1;
+}
+.toggle {
+    display: none;
+}
+
+.toggle + label {
+    width: 64px;
+    height: 32px;
+    background: #111 url(./assets/sun.svg) no-repeat;
+    background-position: right;
+    background-position-x: calc(100% - 5px);
+    display: block;
+    position: relative;
+    border-radius: 32px;
+    padding: 2px;
+    transition: 200ms;
+    cursor: pointer;
+}
+.toggle + label:before{
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: white;
+    display: block;
+    border-radius: 50%;
+    right: unset;
+    left: 2px;
+    top: 2px;
+    transition: 200ms;
+}
+
+.toggle:checked + label {
+    background: #111 url(./assets/moon.svg) no-repeat ;
+    background-position: left;
+    background-position-x: 5px;
+}
+.toggle:checked + label:before {
+    left: calc(100% - 34px);
+    box-shadow: 0 4px 4px rgba(0 0 0 / 10%)
+}
